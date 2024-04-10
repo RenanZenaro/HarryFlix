@@ -1,0 +1,16 @@
+Configurar o Git local:
+git config --global user.name RenanZenaro
+git config --global user.email renanzenaro@hotmail.com
+
+
+Criar um projeto MVC:
+dotnet new mvc -o HarryFlix (caso já tenha a pasta não precisa fazer)
+
+dotnet new sln --name HarryFlix
+
+dotnet sln add HarryFlix\HarryFlix.csproj
+
+
+Para executar o projeto:
+cd HarryFlix
+dotnet watch run
