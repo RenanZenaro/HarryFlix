@@ -14,3 +14,15 @@ dotnet sln add HarryFlix\HarryFlix.csproj
 Para executar o projeto:
 cd HarryFlix
 dotnet watch run
+
+
+Criar as classes de dados - Pasta Models
+
+Instalar os Pacotes necessários:
+    Shift + Ctrl + P --> NuGet Gallery
+    pesquisar e Instalar: EntityFrameworkCore
+    pesquisar e Instalar: EntityFrameworkCore.Design
+    pesquisar e Instalar: EntityFrameworkCore.Tools
+    pesquisar e Instalar: Pomelo
+
+Criar uma pasta Data - AppDbContext

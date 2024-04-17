@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HarryFlix.Models;
+
 [Table("Movie")]
 public class Movie
 {
@@ -24,26 +25,26 @@ public class Movie
 
     [Column(TypeName = "Year")]
     [Display(Name = "Ano de Estreia")]
-    public int16 MovieYear { get; set; }
+    public Int16 MovieYear { get; set; }
     
     [Column(TypeName = "smallint(3)")]
     [Display(Name = "Duração (em minutos)")]
     [Required(ErrorMessage = "Por favor, informe a Duração")]
-    public int16 MovieYear { get; set; }
+    public Int16 Duration { get; set; }
 
     [Display(Name = "Classificação Etária")]
     [Required(ErrorMessage = "Por favor, informe a Classificação Etária")]
     public sbyte AgeRating { get; set; }
 
     [StringLength(200)]
-    [Display(Nome = "Foto")]
+    [Display(Name = "Foto")]
     public string Image { get; set; }
 
     [NotMapped]
     [Display(Name = "Duração")]
     public string HourDuration { get {
-        return TimeSpan.FromMinutes(Duration).ToString(@"%h'h 'm'min'")
+        return TimeSpan.FromMinutes(Duration).ToString(@"%h'h 'm'min'");
     } }
 
-    
+    public ICollection<MovieGenre> Genres { get; set; }
 }

@@ -14,4 +14,5 @@ public class MovieGenre
     [Key, Column(Order = 2)]
     public sbyte GenreId { get; set; }
     [ForeignKey("GenreId")]
+    public Genre Genre { get; set; }
 }
