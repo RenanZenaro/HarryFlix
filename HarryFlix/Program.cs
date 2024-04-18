@@ -1,9 +1,17 @@
+using HarryFlix.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 string conn = builder.Configuration.GetConnectionString("HarryFlix");
+var version = ServerVersion.AutoDetect(conn);
+
+builder.Services.AddDbContext<AppDbContext>(
+    opt => opt.UseMySql(conn, version)
+);
 
 var app = builder.Build();
 
