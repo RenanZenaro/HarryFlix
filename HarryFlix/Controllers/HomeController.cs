@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HarryFlix.Models;
 using HarryFlix.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HarryFlix.Controllers;
 
@@ -18,7 +19,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var movies = _context.Movies.ToList();
+        var movies = _context.Movies
+            .Include(m => m.Genres)
+            .ThenInclude(mg => mg.Genre)
+            .ToList();
         return View(movies);
     }
 
