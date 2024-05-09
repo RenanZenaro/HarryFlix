@@ -8,9 +8,9 @@ public class Genre
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public sbyte Id { get; set; }
+    public byte Id { get; set; }
 
-    [Display(Name = "")]
+    [Display(Name = "Nome")]
     [Required(ErrorMessage = "Por favor, informe o Nome")]
     [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
     public string Name { get; set; }
