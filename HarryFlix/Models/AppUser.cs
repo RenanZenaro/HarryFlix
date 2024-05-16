@@ -9,7 +9,7 @@ public class AppUser
 {
     [Key]
     public string AppUserId { get; set; }
-    [ForeignKey("AppUser")]
+    [ForeignKey("AppUserId")]
     public IdentityUser UserAccount { get; set; }
 
     [Display(Name = "Nome")]
