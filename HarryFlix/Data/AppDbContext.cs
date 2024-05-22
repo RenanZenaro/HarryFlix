@@ -25,7 +25,7 @@ public class AppDbContext : IdentityDbContext
         #region Configurando o Muitos para Muitos do MovieGenre
         // Chave Primária Composta
         builder.Entity<MovieGenre>().HasKey(
-            mg => new { mg.MovieId, mg.GenreId}
+            mg => new { mg.MovieId, mg.GenreId }
         );
         // Chave Estrangeira do Movie
         builder.Entity<MovieGenre>()
