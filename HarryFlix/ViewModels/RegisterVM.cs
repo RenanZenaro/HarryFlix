@@ -24,7 +24,7 @@ public class RegisterVM
     public string Password { get; set; }
     
     [DataType(DataType.Password)]
-    [Display(Name = "Senha de Acesso")]
+    [Display(Name = "Confirmar Senha de Acesso")]
     [Required(ErrorMessage = "Por favor, informe sua senha")]
     public string ConfirmPassword { get; set; }
 }
