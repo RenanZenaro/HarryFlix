@@ -31,6 +31,10 @@ public class AccountController : Controller
         };
         return View(login);
     }
+    public IActionResult Register()
+    {
+        return View();
+    }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
